@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Korean Live Class - Online Examination System</title>
-    <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Korean Live Class - Online Examination System</title>
+  <style>
         /* Base Styles */
         * {
             margin: 0;
@@ -38,8 +38,8 @@
         .timer {
             position: fixed;
             background: #3498db;
-			right: 3px;
-			bottom: 10px;
+                        right: 3px;
+                        bottom: 10px;
             color: white;
             padding: 10px 10px;
             border-radius: 5px;
@@ -72,7 +72,7 @@
         button {
             background: #3498db;
             color: white;
-			border: none;
+                        border: none;
             padding: 12px 25px;
             border-radius: 5px;
             cursor: pointer;
@@ -162,160 +162,105 @@
                 font-size: 14px;
             }
             
-        
+           
             
             .section {
                 margin-top: 80px;
                 padding: 20px;
             }
         }
-    </style>
+  </style>
 </head>
 <body>
-    <!-- User Info Form -->
-    <div class="container">
-        <div id="userForm">
-            <h2>Exam Entry</h2>
-            <div class="input-group">
-                <label>Index Number:</label>
-                <input type="text" id="indexNumber"required>
-            </div>
-            <div class="input-group">
-                <label>Your Name:</label>
-                <input type="text" id="userName" required>
-            </div>
-            <button onclick="startExam()">Start Exam</button>
+  <div class="container">
+    <div id="userForm">
+      <h2>Exam Entry</h2>
+      <div class="input-group">
+        <label>Index Number:</label> <input type="text" id="indexNumber" required="">
+      </div>
+      <div class="input-group">
+        <label>Your Name:</label> <input type="text" id="userName" required="">
+      </div><button onclick="startExam()">Start Exam</button>
+    </div>
+  </div>
+  <div class="header-info" id="headerInfo"></div>
+  <div class="timer" id="timer"></div>
+  <div class="container">
+    <div id="readingSection" class="section">
+      <h2>읽기 - Reading Paper (25 Minutes)</h2>
+      <form id="readingForm" name="readingForm">
+        <div class="question">
+          <h2>1. 다음 그림을 보고 맞는 단어나 문장을 고르시오.</h2><img src="https://img.freepik.com/premium-vector/black-white-drawing-fan-with-white-background_615921-20.jpg" alt="fan" width="200" height="200"> <label><input type="radio" name="q1" value="1">선풍기</label> <label><input type="radio" name="q1" value="2">온도계</label> <label><input type="radio" name="q1" value="3">냉장고</label> <label><input type="radio" name="q1" value="4">청소기</label><br>
+          <br>
+          <br>
+          <br>
+          <h2>2. 사과가 맛있습니다. 바나나도 맛있습니다.</h2><label><input type="radio" name="q2" value="1">날씨</label> <label><input type="radio" name="q2" value="2">과일</label> <label><input type="radio" name="q2" value="3">직업</label> <label><input type="radio" name="q2" value="4">나이</label><br>
+          <br>
+          <br>
+          <br>
+          <h2>3. 다음 그림을 보고 맞는 단어나 문장을 고르시오.</h2><img src="https://www.topikguide.com/wp-content/uploads/2023/03/TR12.png" alt="fan" width="700" height="600"> <label><input type="radio" name="q3" value="1">수미 씨는 공항에 왔습니다.</label><br>
+          <br>
+          <label><input type="radio" name="q3" value="2">수미 씨는 제주도에 있습니다.</label><br>
+          <br>
+          <label><input type="radio" name="q3" value="3">지금 제주도는 날씨가 좋습니다.</label><br>
+          <br>
+          <label><input type="radio" name="q3" value="4">민희 씨는 수미 씨와 같이 있습니다.</label>
         </div>
-    </div>
-
-    <!-- Header Info -->
-    <div class="header-info" id="headerInfo"></div>
-    <div class="timer" id="timer"></div>
-
-    <!-- Reading Section -->
-    <div class="container">
-        <div id="readingSection" class="section">
-            <h2>읽기 - Reading Paper (25 Minutes)</h2>
-            <form id="readingForm">
-                <!-- Question template -->
-                <div class="question">
-                    <h2>1. 다음 그림을 보고 맞는 단어나 문장을 고르시오.</h2>
-                    <img src="https://img.freepik.com/premium-vector/black-white-drawing-fan-with-white-background_615921-20.jpg" alt="fan" width="200" height="200">
-                    <label><input type="radio" name="q1" value="1">선풍기</label>
-					<label><input type="radio" name="q1" value="2">온도계</label>
-					<label><input type="radio" name="q1" value="3">냉장고</label>
-					<label><input type="radio" name="q1" value="4">청소기</label>
-			
-			<br><br><br><br><h2>2. 사과가 맛있습니다. 바나나도 맛있습니다.</h2>
-			
-                    
-                    <label><input type="radio" name="q2" value="1">날씨</label>
-            <label><input type="radio" name="q2" value="2">과일</label>
-            <label><input type="radio" name="q2" value="3">직업</label>
-            <label><input type="radio" name="q2" value="4">나이</label>
-			<br><br><br><br><h2>3. 다음 그림을 보고 맞는 단어나 문장을 고르시오.</h2>
-			
-                    <img src="https://www.topikguide.com/wp-content/uploads/2023/03/TR12.png" alt="fan" width="700" height="600">
-                    <label><input type="radio" name="q3" value="1">수미 씨는 공항에 왔습니다.</label>
-            <br><br><label><input type="radio" name="q3" value="2">수미 씨는 제주도에 있습니다.</label>
-            <br><br><label><input type="radio" name="q3" value="3">지금 제주도는 날씨가 좋습니다.</label>
-            <br><br><label><input type="radio" name="q3" value="4">민희 씨는 수미 씨와 같이 있습니다.</label>
-                </div>
-               
-<div class="question">
-                    <h2>4.빈칸에 들어갈 가장 알맞은 것을 고르십시오.</h2>
-                    <p>수루 씨는 조리사 자격증을 타고 싶습니다.  글에서 외국인력지원센터에서
-
-하는 조리사 교육 과정을...............................</p>
-                    <label><input type="radio" name="q6" value="1">교환했습니다.</label>
-					<label><input type="radio" name="q6" value="2">복습했습니다.</label>
-					<label><input type="radio" name="q6" value="3">신청했습니다.</label>
-					<label><input type="radio" name="q6" value="4">정돈했습니다.</label>
-
-                    <br><br><br><h2>5. 다음 글을 읽고 무엇에 대한 글인지 고르십시오.</h2>
-                  <p>점심시간에 우체국에 갔습니다.  고향에 계는 부모님에게 선물을 보냈습니다. 
-
-배송비는 삼만원이었습니다.</p>
-                    <label><input type="radio" name="q7" value="1">소포</label>
-					<label><input type="radio" name="q7" value="2">생일</label>
-					<label><input type="radio" name="q7" value="3">예약</label>
-					<label><input type="radio" name="q7" value="4">쇼핑</label>
-
-			   <br><br><button type="button" onclick="startListeningSection()">Finish Reading Section</button>
-            </form>
+        <div class="question">
+          <h2>4.빈칸에 들어갈 가장 알맞은 것을 고르십시오.</h2>
+          <p>수루 씨는 조리사 자격증을 타고 싶습니다. 글에서 외국인력지원센터에서 하는 조리사 교육 과정을...............................</p><label><input type="radio" name="q6" value="1">교환했습니다.</label> <label><input type="radio" name="q6" value="2">복습했습니다.</label> <label><input type="radio" name="q6" value="3">신청했습니다.</label> <label><input type="radio" name="q6" value="4">정돈했습니다.</label><br>
+          <br>
+          <br>
+          <h2>5. 다음 글을 읽고 무엇에 대한 글인지 고르십시오.</h2>
+          <p>점심시간에 우체국에 갔습니다. 고향에 계는 부모님에게 선물을 보냈습니다. 배송비는 삼만원이었습니다.</p><label><input type="radio" name="q7" value="1">소포</label> <label><input type="radio" name="q7" value="2">생일</label> <label><input type="radio" name="q7" value="3">예약</label> <label><input type="radio" name="q7" value="4">쇼핑</label><br>
+          <br>
+          <button type="button" onclick="startListeningSection()">Finish Reading Section</button>
         </div>
+      </form>
     </div>
-
-    <!-- Listening Section -->
-    <div class="container">
-        <div id="listeningSection" class="section">
-		<h2>듣기 - Listening Paper (25 Minutes)</h2>
-            <h2>잘 듣고 내용과 관계 있는 그림을 고르십시오.</h2>
-            <form id="listeningForm">
-                <!-- Question template -->
-                <div class="question">
-                    <p>1.잘 듣고 내용과 관계 있는 그림을 고르십시오.</p>
-					<img src="q1.png" alt="q1" width="600" height="400">
-                    <audio controls>
-                        <source src="https://exam.koreanliveclass.com/public/uploads/exams/233question." type="audio/mpeg">
-                    </audio>
-                    <label><input type="radio" name="q4" value="1">1</label>
-                    <br><label><input type="radio" name="q4" value="2">2</label>
-                    <br><label><input type="radio" name="q4" value="3">3</label>
-					<br><label><input type="radio" name="q4" value="4">4</label>
-					
-					<br><br><h2>이야기를 듣고 질문에 알맞은 대답을 고르십시오.</h2>
-					<p>2.두 사람은 내일 같이 무엇을 봅니까?</p>
-					<audio controls>
-                        <source src="https://exam.koreanliveclass.com/public/uploads/exams/243question." type="audio/mpeg">
-                    </audio>
-                    <label><input type="radio" name="q5" value="1">책</label>
-                    <br><label><input type="radio" name="q5" value="2">사진</label>
-                    <br><label><input type="radio" name="q5" value="3">드라마</label>
-					<br><label><input type="radio" name="q5" value="4">영화</label>
-					
-					<br><br><h2>이야기를 듣고 질문에 알맞은 대답을 고르십시오.</h2>
-					<p>3.질문을 듣고 알맞은 대답을 고르십시오.</p>
-					<audio controls>
-                        <source src="https://exam.koreanliveclass.com/public/uploads/exams/279question." type="audio/mpeg">
-                    </audio>
-                    <label><input type="radio" name="q8" value="1">괜찮아요, 지난 번에 한 번 봤어요.</label>
-                    <br><label><input type="radio" name="q8" value="2">싫어요, 저는 운동을 별로 안 좋아해요.</label>
-                    <br><label><input type="radio" name="q8" value="3">미안해요, 무릎이 안 좋아서 닦는 것이 힘들어요.</label>
-					<br><label><input type="radio" name="q8" value="4">죄송해요, 제가 좀 바빠서 내일은 어려워요.</label>
-					
-					<br><br><h2>이야기를 듣고 질문에 알맞은 대답을 고르십시오.</h2>
-					<p>4.이 사람은 왜 한국 음식을 좋아합니까?</p>
-					<audio controls>
-                        <source src="https://exam.koreanliveclass.com/public/uploads/exams/554question." type="audio/mpeg">
-                    </audio>
-                    <label><input type="radio" name="q9" value="1">한국 음식을 시고 답니다.</label>
-                    <br><label><input type="radio" name="q9" value="2">한국 음식을 먹지 않습니다.</label>
-                    <br><label><input type="radio" name="q9" value="3">한국 음식을 맵지만 맛잇습니다.</label>
-					<br><label><input type="radio" name="q9" value="4">한국 음식을 싱겁지만 맛있습니다.</label>
-					
-					<br><br><h2>들은 것을 고르십시오.</h2>
-					<p>5. 이 사람은 무엇을 하고 있습니까?</p>
-					<img src="https://lh3.googleusercontent.com/pw/AM-JKLU5DWhUbeUJopQ99tq5Eth3s1up-58rq-BoElowXPXwawUtVtSS-JU_sKY7RIW3T5r-rhPb4Qq3veSokS4sLRedRA3lJvafcs8ikszH-y0sr5BtV3yqRNsbZyWINZvWYCnAIMtOptzxl-BR_IqxUMyC=w734-h547-no?authuser=0" alt="fan" width="300" height="600">
-					<audio controls>
-                        <source src="https://exam.koreanliveclass.com/public/uploads/exams/884question." type="audio/mpeg">
-                    </audio>
-                    <label><input type="radio" name="q10" value="1">1</label>
-                    <br><label><input type="radio" name="q10" value="2">2</label>
-                    <br><label><input type="radio" name="q10" value="3">3</label>
-					<br><label><input type="radio" name="q10" value="4">4</label>
-                </div>
-                <!-- Add remaining 19 questions -->
-                <button type="button" onclick="showResults()">Submit Exam</button>
-            </form>
-        </div>
+  </div>
+  <div class="container">
+    <div id="listeningSection" class="section">
+      <h2>듣기 - Listening Paper (25 Minutes)</h2>
+      <h2>잘 듣고 내용과 관계 있는 그림을 고르십시오.</h2>
+      <form id="listeningForm" name="listeningForm">
+        <div class="question">
+          <p>1.잘 듣고 내용과 관계 있는 그림을 고르십시오.</p><img src="q1.png" alt="q1" width="600" height="400"> <audio controls=""><source src="https://exam.koreanliveclass.com/public/uploads/exams/233question." type="audio/mpeg"></audio> <label><input type="radio" name="q4" value="1">1</label><br>
+          <label><input type="radio" name="q4" value="2">2</label><br>
+          <label><input type="radio" name="q4" value="3">3</label><br>
+          <label><input type="radio" name="q4" value="4">4</label><br>
+          <br>
+          <h2>이야기를 듣고 질문에 알맞은 대답을 고르십시오.</h2>
+          <p>2.두 사람은 내일 같이 무엇을 봅니까?</p><audio controls=""><source src="https://exam.koreanliveclass.com/public/uploads/exams/243question." type="audio/mpeg"></audio> <label><input type="radio" name="q5" value="1">책</label><br>
+          <label><input type="radio" name="q5" value="2">사진</label><br>
+          <label><input type="radio" name="q5" value="3">드라마</label><br>
+          <label><input type="radio" name="q5" value="4">영화</label><br>
+          <br>
+          <h2>이야기를 듣고 질문에 알맞은 대답을 고르십시오.</h2>
+          <p>3.질문을 듣고 알맞은 대답을 고르십시오.</p><audio controls=""><source src="https://exam.koreanliveclass.com/public/uploads/exams/279question." type="audio/mpeg"></audio> <label><input type="radio" name="q8" value="1">괜찮아요, 지난 번에 한 번 봤어요.</label><br>
+          <label><input type="radio" name="q8" value="2">싫어요, 저는 운동을 별로 안 좋아해요.</label><br>
+          <label><input type="radio" name="q8" value="3">미안해요, 무릎이 안 좋아서 닦는 것이 힘들어요.</label><br>
+          <label><input type="radio" name="q8" value="4">죄송해요, 제가 좀 바빠서 내일은 어려워요.</label><br>
+          <br>
+          <h2>이야기를 듣고 질문에 알맞은 대답을 고르십시오.</h2>
+          <p>4.이 사람은 왜 한국 음식을 좋아합니까?</p><audio controls=""><source src="https://exam.koreanliveclass.com/public/uploads/exams/554question." type="audio/mpeg"></audio> <label><input type="radio" name="q9" value="1">한국 음식을 시고 답니다.</label><br>
+          <label><input type="radio" name="q9" value="2">한국 음식을 먹지 않습니다.</label><br>
+          <label><input type="radio" name="q9" value="3">한국 음식을 맵지만 맛잇습니다.</label><br>
+          <label><input type="radio" name="q9" value="4">한국 음식을 싱겁지만 맛있습니다.</label><br>
+          <br>
+          <h2>들은 것을 고르십시오.</h2>
+          <p>5. 이 사람은 무엇을 하고 있습니까?</p><img src="https://lh3.googleusercontent.com/pw/AM-JKLU5DWhUbeUJopQ99tq5Eth3s1up-58rq-BoElowXPXwawUtVtSS-JU_sKY7RIW3T5r-rhPb4Qq3veSokS4sLRedRA3lJvafcs8ikszH-y0sr5BtV3yqRNsbZyWINZvWYCnAIMtOptzxl-BR_IqxUMyC=w734-h547-no?authuser=0" alt="fan" width="300" height="600"> <audio controls=""><source src="https://exam.koreanliveclass.com/public/uploads/exams/884question." type="audio/mpeg"></audio> <label><input type="radio" name="q10" value="1">1</label><br>
+          <label><input type="radio" name="q10" value="2">2</label><br>
+          <label><input type="radio" name="q10" value="3">3</label><br>
+          <label><input type="radio" name="q10" value="4">4</label>
+        </div><button type="button" onclick="showResults()">Submit Exam</button>
+      </form>
     </div>
-
-    <!-- Results Section -->
-    <div class="container">
-        <div id="resultSection" class="section"></div>
-    </div>
-<script>
+  </div>
+  <div class="container">
+    <div id="resultSection" class="section"></div>
+  </div>
+  <script>
     let timerInterval; // Store the interval globally to avoid multiple timers
 
     function startExam() {
@@ -337,7 +282,7 @@
         document.getElementById("readingSection").style.display = "block";
 
         // Start a 25-minute timer
-        startTimer(25 * 60);
+        startTimer(3 * 60);
     }
 
     function startListeningSection() {
@@ -346,7 +291,7 @@
         document.getElementById("listeningSection").style.display = "block";
 
         // Start a new 25-minute timer for listening section
-        startTimer(25 * 60);
+        startTimer(3 * 60);
     }
 
     function showResults() {
@@ -355,7 +300,7 @@
         document.getElementById("resultSection").style.display = "block";
 
         // Display final message
-        document.getElementById("resultSection").innerHTML = `<h2>	175</h2><p>Your responses have been recorded.</p>`;
+        document.getElementById("resultSection").innerHTML = `<h2>      175</h2><p>Your responses have been recorded.</p>`;
 
         // Stop the timer
         clearInterval(timerInterval);
@@ -388,17 +333,17 @@
             }
         }, 1000);
     }
-	let correctAnswers = {
+        let correctAnswers = {
         "q1": "1", // Example answers, replace with correct ones
         "q2": "2",
         "q3": "2",
         "q4": "2",
-		"q5": "4",
-		"q6": "3",
-		"q7": "1",
-		"q8": "3",
-		"q9": "3",
-		"q10": "1",
+                "q5": "4",
+                "q6": "3",
+                "q7": "1",
+                "q8": "3",
+                "q9": "3",
+                "q10": "1",
         // Add more correct answers
     };
 
@@ -420,9 +365,7 @@
         clearInterval(timerInterval);
         document.getElementById("timer").textContent = "";
     }
-</script>
-
-<h3 p style="color:#2d7de8" >This project provides an effective online examination platform with an intuitive user interface and a structured exam flow. It ensures fair assessment through timed sections and offers a mix of visual and auditory questions to evaluate different skills.</h3>
-
+  </script>
+  <h3 p="" style="color:#2d7de8">This project provides an effective online examination platform with an intuitive user interface and a structured exam flow. It ensures fair assessment through timed sections and offers a mix of visual and auditory questions to evaluate different skills.</h3>
 </body>
 </html>
