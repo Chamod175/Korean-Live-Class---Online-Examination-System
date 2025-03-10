@@ -5,171 +5,170 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Korean Live Class - Online Examination System</title>
   <style>
-        /* Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+    /* Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-        body {
-            background-color: #f0f2f5;
-            line-height: 1.6;
-        }
+    body {
+      background-color: #f0f2f5;
+      line-height: 1.6;
+    }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
 
-        /* Header Styles */
-        .header-info {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: #ffffff;
-            padding: 15px 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            z-index: 1000;
-        }
+    /* Header Styles */
+    .header-info {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #ffffff;
+      padding: 15px 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
 
-        .timer {
-            position: fixed;
-            background: #3498db;
-                        right: 3px;
-                        bottom: 10px;
-            color: white;
-            padding: 10px 10px;
-            border-radius: 5px;
-            font-weight: bold;
-        }
+    .timer {
+      position: fixed;
+      background: #3498db;
+      right: 3px;
+      bottom: 10px;
+      color: white;
+      padding: 10px 10px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
 
-        /* Form Styles */
-        #userForm {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            margin-top: 100px;
-        }
+    /* Form Styles */
+    #userForm {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 100px;
+    }
 
-        .input-group {
-            margin-bottom: 20px;
-        }
+    .input-group {
+      margin-bottom: 20px;
+    }
 
-        input[type="text"] {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-            margin-top: 5px;
-        }
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+      margin-top: 5px;
+    }
 
-        /* Button Styles */
-        button {
-            background: #3498db;
-            color: white;
-                        border: none;
-            padding: 12px 25px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background 0.3s ease;
+    /* Button Styles */
+    button {
+      background: #3498db;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s ease;
+    }
 
-        }
+    button:hover {
+      background: #2980b9;
+    }
 
-        button:hover {
-            background: #2980b9;
-        }
+    /* Section Styles */
+    .section {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 100px;
+      display: none;
+    }
 
-        /* Section Styles */
-        .section {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            margin-top: 100px;
-            display: none;
-        }
+    h2 {
+      color: #2c3e50;
+      margin-bottom: 25px;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 10px;
+    }
 
-        h2 {
-            color: #2c3e50;
-            margin-bottom: 25px;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-        }
+    /* Question Styles */
+    .question {
+      margin-bottom: 30px;
+      padding: 20px;
+      border: 1px solid #eee;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
 
-        /* Question Styles */
-        .question {
-            margin-bottom: 30px;
-            padding: 20px;
-            border: 1px solid #eee;
-            border-radius: 5px;
-            transition: background 0.3s ease;
-        }
+    .question:hover {
+      background: #f9f9f9;
+    }
 
-        .question:hover {
-            background: #f9f9f9;
-        }
+    .question p {
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
 
-        .question p {
-            font-weight: 500;
-            margin-bottom: 15px;
-        }
+    /* Media Elements */
+    img {
+      max-width: 100%;
+      height: auto;
+      margin: 15px 0;
+      border-radius: 5px;
+    }
 
-        /* Media Elements */
-        img {
-            max-width: 100%;
-            height: auto;
-            margin: 15px 0;
-            border-radius: 5px;
-        }
+    audio {
+      margin: 15px 0;
+      width: 100%;
+    }
 
-        audio {
-            margin: 15px 0;
-            width: 100%;
-        }
+    /* Radio Button Styles */
+    input[type="radio"] {
+      margin: 0 10px 0 5px;
+      transform: scale(1.2);
+    }
 
-        /* Radio Button Styles */
-        input[type="radio"] {
-            margin: 0 10px 0 5px;
-            transform: scale(1.2);
-        }
+    /* Results Section */
+    #resultSection {
+      text-align: center;
+      padding: 50px;
+    }
 
-        /* Results Section */
-        #resultSection {
-            text-align: center;
-            padding: 50px;
-        }
+    #resultSection h2 {
+      font-size: 2.5em;
+      color: #27ae60;
+      margin-bottom: 20px;
+    }
 
-        #resultSection h2 {
-            font-size: 2.5em;
-            color: #27ae60;
-            margin-bottom: 20px;
-        }
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        padding: 10px;
+      }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                padding: 10px;
-            }
-            
-            .header-info {
-                padding: 10px;
-                font-size: 14px;
-            }
-            
-           
-            
-            .section {
-                margin-top: 80px;
-                padding: 20px;
-            }
-        }
+      .header-info {
+        padding: 10px;
+        font-size: 14px;
+      }
+
+      .section {
+        margin-top: 80px;
+        padding: 20px;
+      }
+    }
+
   </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
   <div class="container">
@@ -193,9 +192,7 @@
           <h2>1. 다음 그림을 보고 맞는 단어나 문장을 고르시오.</h2><img src="https://img.freepik.com/premium-vector/black-white-drawing-fan-with-white-background_615921-20.jpg" alt="fan" width="200" height="200"> <label><input type="radio" name="q1" value="1">선풍기</label> <label><input type="radio" name="q1" value="2">온도계</label> <label><input type="radio" name="q1" value="3">냉장고</label> <label><input type="radio" name="q1" value="4">청소기</label><br>
           <br>
           <br>
-          <br>
           <h2>2. 사과가 맛있습니다. 바나나도 맛있습니다.</h2><label><input type="radio" name="q2" value="1">날씨</label> <label><input type="radio" name="q2" value="2">과일</label> <label><input type="radio" name="q2" value="3">직업</label> <label><input type="radio" name="q2" value="4">나이</label><br>
-          <br>
           <br>
           <br>
           <h2>3. 다음 그림을 보고 맞는 단어나 문장을 고르시오.</h2><img src="https://www.topikguide.com/wp-content/uploads/2023/03/TR12.png" alt="fan" width="700" height="600"> <label><input type="radio" name="q3" value="1">수미 씨는 공항에 왔습니다.</label><br>
@@ -207,7 +204,7 @@
           <label><input type="radio" name="q3" value="4">민희 씨는 수미 씨와 같이 있습니다.</label>
         </div>
         <div class="question">
-          <h2>4.빈칸에 들어갈 가장 알맞은 것을 고르십시오.</h2>
+          <h2>4. 빈칸에 들어갈 가장 알맞은 것을 고르십시오.</h2>
           <p>수루 씨는 조리사 자격증을 타고 싶습니다. 글에서 외국인력지원센터에서 하는 조리사 교육 과정을...............................</p><label><input type="radio" name="q6" value="1">교환했습니다.</label> <label><input type="radio" name="q6" value="2">복습했습니다.</label> <label><input type="radio" name="q6" value="3">신청했습니다.</label> <label><input type="radio" name="q6" value="4">정돈했습니다.</label><br>
           <br>
           <br>
@@ -225,25 +222,25 @@
       <h2>잘 듣고 내용과 관계 있는 그림을 고르십시오.</h2>
       <form id="listeningForm" name="listeningForm">
         <div class="question">
-          <p>1.잘 듣고 내용과 관계 있는 그림을 고르십시오.</p><img src="q1.png" alt="q1" width="600" height="400"> <audio controls=""><source src="https://exam.koreanliveclass.com/public/uploads/exams/233question." type="audio/mpeg"></audio> <label><input type="radio" name="q4" value="1">1</label><br>
+          <p>1. 잘 듣고 내용과 관계 있는 그림을 고르십시오.</p><img src="q1.png" alt="q1" width="600" height="400"> <audio controls=""><source src="https://exam.koreanliveclass.com/public/uploads/exams/233question." type="audio/mpeg"></audio> <label><input type="radio" name="q4" value="1">1</label><br>
           <label><input type="radio" name="q4" value="2">2</label><br>
           <label><input type="radio" name="q4" value="3">3</label><br>
           <label><input type="radio" name="q4" value="4">4</label><br>
           <br>
           <h2>이야기를 듣고 질문에 알맞은 대답을 고르십시오.</h2>
-          <p>2.두 사람은 내일 같이 무엇을 봅니까?</p><audio controls=""><source src="https://exam.koreanliveclass.com/public/uploads/exams/243question." type="audio/mpeg"></audio> <label><input type="radio" name="q5" value="1">책</label><br>
+          <p>2. 두 사람은 내일 같이 무엇을 봅니까?</p><audio controls=""><source src="https://exam.koreanliveclass.com/public/uploads/exams/243question." type="audio/mpeg"></audio> <label><input type="radio" name="q5" value="1">책</label><br>
           <label><input type="radio" name="q5" value="2">사진</label><br>
           <label><input type="radio" name="q5" value="3">드라마</label><br>
           <label><input type="radio" name="q5" value="4">영화</label><br>
           <br>
           <h2>이야기를 듣고 질문에 알맞은 대답을 고르십시오.</h2>
-          <p>3.질문을 듣고 알맞은 대답을 고르십시오.</p><audio controls=""><source src="https://exam.koreanliveclass.com/public/uploads/exams/279question." type="audio/mpeg"></audio> <label><input type="radio" name="q8" value="1">괜찮아요, 지난 번에 한 번 봤어요.</label><br>
+          <p>3. 질문을 듣고 알맞은 대답을 고르십시오.</p><audio controls=""><source src="https://exam.koreanliveclass.com/public/uploads/exams/279question." type="audio/mpeg"></audio> <label><input type="radio" name="q8" value="1">괜찮아요, 지난 번에 한 번 봤어요.</label><br>
           <label><input type="radio" name="q8" value="2">싫어요, 저는 운동을 별로 안 좋아해요.</label><br>
           <label><input type="radio" name="q8" value="3">미안해요, 무릎이 안 좋아서 닦는 것이 힘들어요.</label><br>
           <label><input type="radio" name="q8" value="4">죄송해요, 제가 좀 바빠서 내일은 어려워요.</label><br>
           <br>
           <h2>이야기를 듣고 질문에 알맞은 대답을 고르십시오.</h2>
-          <p>4.이 사람은 왜 한국 음식을 좋아합니까?</p><audio controls=""><source src="https://exam.koreanliveclass.com/public/uploads/exams/554question." type="audio/mpeg"></audio> <label><input type="radio" name="q9" value="1">한국 음식을 시고 답니다.</label><br>
+          <p>4. 이 사람은 왜 한국 음식을 좋아합니까?</p><audio controls=""><source src="https://exam.koreanliveclass.com/public/uploads/exams/554question." type="audio/mpeg"></audio> <label><input type="radio" name="q9" value="1">한국 음식을 시고 답니다.</label><br>
           <label><input type="radio" name="q9" value="2">한국 음식을 먹지 않습니다.</label><br>
           <label><input type="radio" name="q9" value="3">한국 음식을 맵지만 맛잇습니다.</label><br>
           <label><input type="radio" name="q9" value="4">한국 음식을 싱겁지만 맛있습니다.</label><br>
@@ -260,112 +257,137 @@
   <div class="container">
     <div id="resultSection" class="section"></div>
   </div>
+  
   <script>
     let timerInterval; // Store the interval globally to avoid multiple timers
 
     function startExam() {
-        // Get user details
-        const indexNumber = document.getElementById("indexNumber").value.trim();
-        const userName = document.getElementById("userName").value.trim();
+      // Get user details
+      const indexNumber = document.getElementById("indexNumber").value.trim();
+      const userName = document.getElementById("userName").value.trim();
 
-        // Validate input
-        if (indexNumber === "" || userName === "") {
-            alert("Please enter your index number and name to proceed.");
-            return;
-        }
+      // Validate input
+      if (indexNumber === "" || userName === "") {
+        alert("Please enter your index number and name to proceed.");
+        return;
+      }
 
-        // Update the header with user details
-        document.getElementById("headerInfo").innerHTML = `<strong>Index Number:</strong> ${indexNumber} | <strong>Name:</strong> ${userName}`;
+      // Update the header with user details
+      document.getElementById("headerInfo").innerHTML = `<strong>Index Number:</strong> ${indexNumber} | <strong>Name:</strong> ${userName}`;
 
-        // Hide the form and show the reading section
-        document.getElementById("userForm").style.display = "none";
-        document.getElementById("readingSection").style.display = "block";
+      // Hide the form and show the reading section
+      document.getElementById("userForm").style.display = "none";
+      document.getElementById("readingSection").style.display = "block";
 
-        // Start a 25-minute timer
-        startTimer(3 * 60);
+      // Start a 25-minute timer
+      startTimer(3 * 60); // Adjust to 25 * 60 for actual exam
     }
 
     function startListeningSection() {
-        // Hide reading section, show listening section
-        document.getElementById("readingSection").style.display = "none";
-        document.getElementById("listeningSection").style.display = "block";
+      // Hide reading section, show listening section
+      document.getElementById("readingSection").style.display = "none";
+      document.getElementById("listeningSection").style.display = "block";
 
-        // Start a new 25-minute timer for listening section
-        startTimer(3 * 60);
+      // Start a new 25-minute timer for listening section
+      startTimer(3 * 60); // Adjust to 25 * 60 for actual exam
     }
 
     function showResults() {
-        // Hide listening section, show result section
-        document.getElementById("listeningSection").style.display = "none";
-        document.getElementById("resultSection").style.display = "block";
+      let score = 0;
+      const totalQuestions = Object.keys(correctAnswers).length;
+      for (let key in correctAnswers) {
+        let selectedOption = document.querySelector(`input[name='${key}']:checked`);
+        if (selectedOption && selectedOption.value === correctAnswers[key]) {
+          score += 5;
+        }
+      }
 
-        // Display final message
-        document.getElementById("resultSection").innerHTML = `<h2>      175</h2><p>Your responses have been recorded.</p>`;
+      // Get user details from header
+      const userInfo = document.getElementById("headerInfo").innerText;
 
-        // Stop the timer
-        clearInterval(timerInterval);
-        document.getElementById("timer").textContent = ""; // Clear timer display
+      // Create result content with print button
+      const resultContent = `
+        <h2>Final Score: ${score}/${totalQuestions * 5}</h2>
+        <p>${userInfo}</p>
+        <p>Your responses have been recorded. You can download your Final score as a PDF.</p>
+        <br><button onclick="generatePDF()">DOWNLOAD</button>
+      `;
+
+      document.getElementById("listeningSection").style.display = "none";
+      const resultSection = document.getElementById("resultSection");
+      resultSection.style.display = "block";
+      resultSection.innerHTML = resultContent;
+
+      clearInterval(timerInterval);
+      document.getElementById("timer").textContent = "";
     }
 
     function startTimer(duration) {
-        clearInterval(timerInterval); // Clear any existing timer to avoid duplication
+      clearInterval(timerInterval); // Clear any existing timer to avoid duplication
 
-        let timer = duration;
-        const timerElement = document.getElementById("timer");
+      let timer = duration;
+      const timerElement = document.getElementById("timer");
 
-        timerInterval = setInterval(function () {
-            let minutes = Math.floor(timer / 60);
-            let seconds = timer % 60;
-            seconds = seconds < 10 ? "0" + seconds : seconds;
+      timerInterval = setInterval(function () {
+        let minutes = Math.floor(timer / 60);
+        let seconds = timer % 60;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
 
-            timerElement.textContent = `Time Left: ${minutes}:${seconds}`;
+        timerElement.textContent = `Time Left: ${minutes}:${seconds}`;
 
-            if (--timer < 0) {
-                clearInterval(timerInterval);
-                alert("Time is up! Moving to the next section.");
-                
-                // Automatically move to the next section when the timer ends
-                if (document.getElementById("readingSection").style.display === "block") {
-                    startListeningSection();
-                } else if (document.getElementById("listeningSection").style.display === "block") {
-                    showResults();
-                }
-            }
-        }, 1000);
+        if (--timer < 0) {
+          clearInterval(timerInterval);
+          alert("Time is up! Moving to the next section.");
+
+          // Automatically move to the next section when the timer ends
+          if (document.getElementById("readingSection").style.display === "block") {
+            startListeningSection();
+          } else if (document.getElementById("listeningSection").style.display === "block") {
+            showResults();
+          }
+        }
+      }, 1000);
     }
-        let correctAnswers = {
-        "q1": "1", // Example answers, replace with correct ones
-        "q2": "2",
-        "q3": "2",
-        "q4": "2",
-                "q5": "4",
-                "q6": "3",
-                "q7": "1",
-                "q8": "3",
-                "q9": "3",
-                "q10": "1",
-        // Add more correct answers
+
+    let correctAnswers = {
+      "q1": "1", // Example answers, replace with correct ones
+      "q2": "2",
+      "q3": "2",
+      "q4": "2",
+      "q5": "4",
+      "q6": "3",
+      "q7": "1",
+      "q8": "3",
+      "q9": "3",
+      "q10": "1",
     };
 
-    function showResults() {
-        let score = 0;
-        const totalQuestions = Object.keys(correctAnswers).length;
-        
-        for (let key in correctAnswers) {
-            let selectedOption = document.querySelector(`input[name='${key}']:checked`);
-            if (selectedOption && selectedOption.value === correctAnswers[key]) {
-                score += 5;
-            }
-        }
-        
-        document.getElementById("listeningSection").style.display = "none";
-        document.getElementById("resultSection").style.display = "block";
-        document.getElementById("resultSection").innerHTML = `<h2>Final Score: ${score}/${totalQuestions * 5}</h2><p>Your responses have been recorded.</p>`;
-        
-        clearInterval(timerInterval);
-        document.getElementById("timer").textContent = "";
+    function generatePDF() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+
+      // Get user info
+      const userInfo = document.getElementById("headerInfo").innerText.split(' | ');
+      const indexNumber = userInfo[0].split(': ')[1];
+      const userName = userInfo[1].split(': ')[1];
+
+      // Get score
+      const scoreText = document.querySelector('#resultSection h2').innerText;
+
+      // Add content to PDF
+      doc.setFontSize(16);
+      doc.text('Exam Results', 105, 20, { align: 'center' });
+
+      doc.setFontSize(12);
+      doc.text(`Index Number: ${indexNumber}`, 20, 40);
+      doc.text(`Name: ${userName}`, 20, 50);
+      doc.text(scoreText, 20, 70);
+      doc.text('Responses Recorded Successfully', 20, 80);
+
+      // Save PDF
+      doc.save('exam_results.pdf');
     }
   </script>
-  <h3 p="" style="color:#2d7de8">This project provides an effective online examination platform with an intuitive user interface and a structured exam flow. It ensures fair assessment through timed sections and offers a mix of visual and auditory questions to evaluate different skills.</h3>
+  
 </body>
 </html>
